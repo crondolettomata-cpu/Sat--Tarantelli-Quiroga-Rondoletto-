@@ -1,8 +1,9 @@
 # Evaluación UX — Burger King
 
 Trabajo práctico de UX/UI: dos tableros construidos con ayuda de IA para evaluar la
-experiencia de pedido de Burger King (app/web) contra **8 leyes de UX** y las **10
-heurísticas de usabilidad de Jakob Nielsen**.
+experiencia de pedido de Burger King (app/web) contra **10 de las 14 leyes de UX** de la
+Ficha de referencia rápida (lawsofux.com) y las **10 heurísticas de usabilidad de Jakob
+Nielsen, completas**.
 
 Sitio estático de un solo archivo HTML (`index.html`) + `style.css` + `script.js` +
 `data.js` con el contenido de ambos tableros. Sin build, sin dependencias — se sirve tal
@@ -13,7 +14,7 @@ cual.
 ```
 index.html    → tablero (tabs: Leyes UX / Heurísticas de Nielsen / Metodología)
 style.css     → estilos
-data.js       → contenido de las 8 leyes UX y las 10 heurísticas, con hallazgos en BK
+data.js       → contenido de las 10 leyes UX y las 10 heurísticas, con hallazgos en BK
 script.js     → render de tarjetas + manejo de tabs + fallback de capturas
 screenshots/  → capturas reales del equipo (ver screenshots/README.md para los nombres esperados)
 docs/prompts_leyes_heuristicas.md  → registro de los prompts de IA usados para armar los tableros

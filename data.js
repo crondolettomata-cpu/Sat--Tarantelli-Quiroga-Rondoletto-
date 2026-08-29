@@ -1,79 +1,112 @@
 /* Contenido de los dos tableros. Cada objeto "shot" define el nombre de archivo
    esperado dentro de /screenshots — al agregar la imagen real con ese nombre,
-   el tablero la muestra automáticamente en lugar del casillero vacío. */
+   el tablero la muestra automáticamente en lugar del casillero vacío.
+
+   Tablero 1 usa las 14 leyes de la "Ficha de referencia rápida — Leyes de UX
+   para analizar diseños" (basada en lawsofux.com) provista por la cátedra.
+   Se documentan 10 de las 14 (mínimo sugerido: 8), priorizando las más
+   evidentes en el flujo de pedido de Burger King. */
 
 const LEYES_UX = [
   {
-    id: "hick",
-    name: "Ley de Hick",
-    quote: "El tiempo que se tarda en tomar una decisión aumenta a medida que se incrementa el número de alternativas.",
-    author: "William E. Hick",
-    verdict: "cumple",
-    finding: "Los tótems de autoservicio y la app agrupan el menú por categorías claras (Combos, Hamburguesas de Carne, Pollo, Postres, Bebidas) en lugar de mostrar más de 50 productos juntos, reduciendo el tiempo de decisión frente a un catálogo tan amplio.",
-    shot: { file: "leyes-01-hick-menu-categorias.png", caption: "Menú principal del tótem/app mostrando las categorías del catálogo." }
-  },
-  {
     id: "fitts",
+    category: "Percepción y jerarquía visual",
     name: "Ley de Fitts",
-    quote: "El tiempo necesario para alcanzar un objetivo con un movimiento rápido depende del tamaño de dicho objetivo y de la distancia que hay que recorrer hasta él.",
-    author: "Paul Fitts, 1954",
+    quote: "El tiempo para alcanzar un objetivo depende de su tamaño y de la distancia al mismo.",
+    question: "¿Los botones o CTAs de uso frecuente son grandes y están cerca (pulgar en mobile, cursor en desktop)?",
     verdict: "cumple",
-    finding: "El botón principal de “Añadir al carrito” o “Pagar” ocupa todo el ancho inferior de la pantalla en el tótem y en la app, facilitando tocarlo rápido y sin puntería fina.",
-    shot: { file: "leyes-02-fitts-boton-pagar.png", caption: "Pantalla con el botón de Pagar/Añadir al carrito a todo el ancho inferior." }
+    finding: "Sí: el botón de “Pagar” / “Añadir al carrito” ocupa todo el ancho inferior de la pantalla, a un toque de pulgar en mobile y sin necesitar precisión con el cursor en desktop.",
+    shot: { file: "leyes-01-fitts-boton-pagar.png", caption: "Pantalla con el botón de Pagar/Añadir al carrito a todo el ancho inferior." }
   },
   {
-    id: "jakob",
-    name: "Ley de Jakob",
-    quote: "Los usuarios esperan que las interfaces se comporten de manera predecible, similar a otras aplicaciones y sitios web que ya han utilizado.",
-    author: "Jakob Nielsen",
+    id: "hick",
+    category: "Decisión y carga cognitiva",
+    name: "Ley de Hick",
+    quote: "Más opciones y complejidad = más tiempo para decidir.",
+    question: "¿Los menús y formularios están simplificados? ¿Se usa progressive disclosure?",
     verdict: "cumple",
-    finding: "La app ubica el carrito de compras en la esquina superior derecha con el ícono universal de bolsa/carrito, igual que la mayoría de las apps de delivery y e-commerce, por lo que no exige aprendizaje adicional.",
-    shot: { file: "leyes-03-jakob-carrito.png", caption: "Encabezado de la app mostrando el ícono de carrito arriba a la derecha." }
-  },
-  {
-    id: "tesler",
-    name: "Ley de Tesler",
-    quote: "Todo proceso tiene un nivel básico de complejidad inherente que, una vez alcanzado, no se puede reducir más — solo se puede mover de un lado a otro.",
-    author: "Larry Tesler",
-    verdict: "cumple",
-    finding: "Al personalizar una Whopper (quitar pepinillos, agregar queso), la interfaz asume por defecto los ingredientes del combo estándar y deja los extras como opcionales, moviendo la complejidad de \"elegir todo\" a \"modificar solo lo que se quiere cambiar\".",
-    shot: { file: "leyes-04-tesler-personalizar.png", caption: "Pantalla de personalización de la Whopper (agregar/quitar ingredientes)." }
+    finding: "Sí: el menú se agrupa en categorías (Combos, Carne, Pollo, Postres, Bebidas) en vez de listar todo el catálogo de una vez, y el detalle de cada producto recién se abre al tocarlo.",
+    shot: { file: "leyes-02-hick-menu-categorias.png", caption: "Menú principal del tótem/app mostrando las categorías del catálogo." }
   },
   {
     id: "miller",
+    category: "Decisión y carga cognitiva",
     name: "Ley de Miller",
-    quote: "La memoria de trabajo de una persona retiene, en promedio, entre 5 y 9 elementos a la vez.",
-    author: "George A. Miller",
+    quote: "La memoria de trabajo retiene solo 7 (± 2) elementos.",
+    question: "¿La información está agrupada en bloques (chunks) manejables?",
     verdict: "cumple",
-    finding: "El resumen del pedido agrupa la información en bloques (producto principal / acompañamiento / bebida) en lugar de listar cada ítem y modificador por separado, reduciendo la cantidad de unidades sueltas que el usuario debe retener antes de pagar.",
-    shot: { file: "leyes-05-miller-resumen-pedido.png", caption: "Resumen del pedido agrupado por bloques antes del pago." }
+    finding: "Sí: el resumen del pedido agrupa la información en bloques (producto principal / acompañamiento / bebida) en lugar de listar cada ítem y modificador por separado.",
+    shot: { file: "leyes-03-miller-resumen-pedido.png", caption: "Resumen del pedido agrupado por bloques antes del pago." }
+  },
+  {
+    id: "occam",
+    category: "Decisión y carga cognitiva",
+    name: "Navaja de Occam",
+    quote: "Entre dos soluciones igual de efectivas, gana la más simple.",
+    question: "¿Hay elementos que podrían eliminarse sin perder función?",
+    verdict: "rompe",
+    finding: "Sí: las promociones y sugerencias que aparecen durante el flujo de compra podrían eliminarse sin que el usuario pierda ninguna función, y hoy compiten con el paso de completar el pedido.",
+    shot: { file: "leyes-04-occam-promos.png", caption: "Pantalla donde aparece una promoción/sugerencia dentro del flujo de compra." }
+  },
+  {
+    id: "tesler",
+    category: "Decisión y carga cognitiva",
+    name: "Ley de Tesler",
+    quote: "La complejidad no desaparece: se desplaza del sistema al usuario.",
+    question: "¿Quién absorbe la complejidad de la tarea: el diseño o la persona usuaria?",
+    verdict: "cumple",
+    finding: "La absorbe mayormente el diseño: al personalizar una Whopper, la app asume por defecto los ingredientes del combo estándar y solo pide intervención puntual (quitar pepinillos, agregar queso).",
+    shot: { file: "leyes-05-tesler-personalizar.png", caption: "Pantalla de personalización de la Whopper (agregar/quitar ingredientes)." }
   },
   {
     id: "peak-end",
+    category: "Memoria y motivación",
     name: "Regla Peak-End",
-    quote: "Las personas juzgan una experiencia principalmente por su momento más intenso y por cómo termina, más que por el promedio de todo el recorrido.",
-    author: "Daniel Kahneman",
-    verdict: "revisar",
-    finding: "La pantalla final de confirmación (“Pedido confirmado” / “Listo para retirar”) funciona como el cierre de la experiencia de compra. Si esa pantalla es débil, lenta en aparecer o poco clara, empaña el recuerdo de un recorrido que hasta ese punto fue fluido.",
+    quote: "Se recuerda el pico emocional y el final de la experiencia, no el promedio.",
+    question: "¿Cómo es el cierre del flujo (confirmación, error, pantalla de éxito)?",
+    verdict: "rompe",
+    finding: "La pantalla final (“Pedido confirmado” / “Listo para retirar”) es el cierre de la experiencia: si aparece débil, lenta o poco clara, empaña el recuerdo de un recorrido que hasta ahí fue fluido.",
     shot: { file: "leyes-06-peakend-confirmacion.png", caption: "Pantalla final de confirmación del pedido." }
   },
   {
-    id: "estetica",
-    name: "Efecto Estética-Usabilidad",
-    quote: "Los usuarios perciben los diseños visualmente atractivos como más fáciles de usar, aunque objetivamente no lo sean.",
-    author: "Laws of UX",
-    verdict: "revisar",
-    finding: "Las fotos grandes y apetitosas de los combos generan una primera impresión de calidad que puede disimular fricciones reales del flujo (pasos de más, promociones intercaladas antes del pago).",
-    shot: { file: "leyes-07-estetica-catalogo.png", caption: "Catálogo de combos con fotografías grandes de producto." }
+    id: "jakob",
+    category: "Consistencia y robustez",
+    name: "Ley de Jakob",
+    quote: "Los usuarios esperan que un producto funcione como los que ya conocen.",
+    question: "¿Sigue las convenciones de su categoría o plataforma, o exige aprender un patrón nuevo?",
+    verdict: "cumple",
+    finding: "Sí: el carrito se ubica arriba a la derecha con el ícono universal de bolsa, igual que en la mayoría de las apps de delivery y e-commerce, sin exigir aprender un patrón nuevo.",
+    shot: { file: "leyes-07-jakob-carrito.png", caption: "Encabezado de la app mostrando el ícono de carrito arriba a la derecha." }
   },
   {
     id: "doherty",
+    category: "Consistencia y robustez",
     name: "Umbral de Doherty",
-    quote: "La productividad y el nivel de atención de una persona aumentan cuando un sistema responde en menos de 400 ms.",
-    author: "Doherty & Thadani, IBM 1982",
-    verdict: "revisar",
-    finding: "Al confirmar el pago o aplicar un cupón, la ausencia de un indicador de carga inmediato deja al usuario sin saber si el toque se registró, con riesgo de que vuelva a tocar el botón y se dispare un pedido duplicado.",
+    quote: "Responder en menos de 400 ms mantiene la productividad y la atención.",
+    question: "¿Hay feedback inmediato ante cada acción (loading, skeleton, estado de carga)?",
+    verdict: "rompe",
+    finding: "No siempre: al confirmar el pago o aplicar un cupón, la falta de un indicador de carga inmediato deja al usuario sin saber si el toque se registró, con riesgo de que lo repita y duplique el pedido.",
     shot: { file: "leyes-08-doherty-carga-pago.png", caption: "Momento de confirmar el pago, mostrando (o no) un indicador de carga." }
+  },
+  {
+    id: "estetica",
+    category: "Percepción y jerarquía visual",
+    name: "Efecto Estética-Usabilidad",
+    quote: "Un diseño lindo se percibe como más usable, aunque no lo sea.",
+    question: "¿La estética general está “comprando” tolerancia a fricciones reales de uso?",
+    verdict: "rompe",
+    finding: "Sí: las fotos grandes y apetitosas de los combos generan una buena primera impresión que puede tapar fricciones reales del flujo, como pasos de más o promociones intercaladas antes del pago.",
+    shot: { file: "leyes-09-estetica-catalogo.png", caption: "Catálogo de combos con fotografías grandes de producto." }
+  },
+  {
+    id: "pareto",
+    category: "Priorización",
+    name: "Principio de Pareto",
+    quote: "En muchos sistemas, el 80% del efecto proviene del 20% de las causas.",
+    question: "¿El diseño prioriza visual y funcionalmente las tareas más usadas por la mayoría?",
+    verdict: "cumple",
+    finding: "Sí: la pantalla de inicio destaca accesos directos como “Pedir de nuevo” y los combos más pedidos, priorizando las tareas que concentran la mayoría de los pedidos por sobre el catálogo completo.",
+    shot: { file: "leyes-10-pareto-inicio.png", caption: "Pantalla de inicio con accesos directos a pedidos frecuentes/combos populares." }
   }
 ];
 
@@ -86,6 +119,7 @@ const NIELSEN = [
     severity: 1,
     priority: false,
     finding: "Burger King brinda feedback durante las distintas etapas del pedido y permite reconocer el avance del proceso (por ejemplo, el estado “En preparación” / “Listo para retirar”). Sin embargo, algunas confirmaciones intermedias — como aplicar un cupón o guardar una dirección — no dejan suficientemente claro si la acción ya se ejecutó o todavía requiere una nueva confirmación.",
+    impact: "La persona usuaria queda con una duda puntual sobre si su acción se registró, lo que puede llevarla a repetir el toque o a desconfiar del paso siguiente.",
     shot: { file: "nielsen-01-confirmacion-intermedia.png", caption: "Pantalla de confirmación intermedia del pedido." }
   },
   {
@@ -96,6 +130,7 @@ const NIELSEN = [
     severity: 2,
     priority: true,
     finding: "La app utiliza términos familiares para hacer un pedido, pero incorpora conceptos propios de la marca como “Coronas” y “Canjes” sin suficiente contexto. Para usuarios nuevos no queda claro qué significan, cómo se obtienen ni qué beneficio ofrecen.",
+    impact: "Un usuario nuevo puede ignorar o desconfiar del programa de fidelización directamente, perdiendo beneficios por no entender cómo funciona.",
     shot: { file: "nielsen-02-mibk-coronas.png", caption: "Pantalla de Mi BK / Coronas / Canjes." }
   },
   {
@@ -106,6 +141,7 @@ const NIELSEN = [
     severity: 1,
     priority: false,
     finding: "El usuario puede volver atrás, modificar productos y revisar el carrito antes de confirmar el pedido. Sin embargo, cambiar una decisión tomada varios pasos antes (por ejemplo la sucursal) puede implicar retroceder todo el flujo y repetir pasos ya completados.",
+    impact: "Aumenta el tiempo y el esfuerzo percibido para corregir un error de selección temprano, lo que puede frustrar a quien solo quiere cambiar un dato puntual.",
     shot: { file: "nielsen-03-carrito-modificar.png", caption: "Carrito o pantalla donde se puede volver/modificar el pedido." }
   },
   {
@@ -116,6 +152,7 @@ const NIELSEN = [
     severity: 0,
     priority: false,
     finding: "La aplicación sigue patrones habituales de las apps de pedidos, como el uso de carrito, categorías y navegación mediante botones reconocibles. Las acciones mantienen una lógica consistente durante todo el recorrido: no se relevó una inconsistencia concreta en las pantallas analizadas, por lo que la heurística se da por cumplida.",
+    impact: "Al reconocer patrones ya conocidos de otras apps, la persona usuaria no necesita aprender nada nuevo y navega con confianza desde el primer uso.",
     shot: { file: "nielsen-04-consistencia-navegacion.png", caption: "Cualquier pantalla del flujo principal, para verificar consistencia de patrones." }
   },
   {
@@ -126,6 +163,7 @@ const NIELSEN = [
     severity: 2,
     priority: true,
     finding: "Algunas restricciones o decisiones relevantes aparecen recién cuando el usuario ya avanzó en el recorrido. Mostrar antes información como la sucursal seleccionada, su disponibilidad o las condiciones del pedido (para consumir aquí / para llevar) permitiría prevenir errores en lugar de corregirlos después.",
+    impact: "El usuario puede armar todo un pedido personalizado y descubrir recién al pagar que la sucursal no lo tiene disponible, perdiendo el trabajo hecho y el tiempo invertido.",
     shot: { file: "nielsen-05-seleccion-sucursal.png", caption: "Selección/confirmación de sucursal." }
   },
   {
@@ -136,6 +174,7 @@ const NIELSEN = [
     severity: 2,
     priority: false,
     finding: "Aunque las opciones principales permanecen visibles durante el pedido, cierta información seleccionada previamente (como la sucursal o el modo de entrega) no siempre tiene suficiente presencia durante todo el recorrido, obligando al usuario a recordar una decisión tomada pantallas atrás.",
+    impact: "El usuario puede terminar completando el pago sin estar seguro de en qué sucursal o modalidad quedó su pedido, generando ansiedad o pedidos mal configurados.",
     shot: { file: "nielsen-06-info-no-visible.png", caption: "Pantalla avanzada del flujo donde no queda visible la sucursal/ubicación elegida." }
   },
   {
@@ -146,6 +185,7 @@ const NIELSEN = [
     severity: 2,
     priority: true,
     finding: "La app permite completar correctamente un pedido, pero ofrece pocos atajos para usuarios frecuentes: no guardar los datos de la tarjeta obliga a volver a ingresarlos en cada compra, aumentando el esfuerzo en lugar de acelerarlo para quien pide seguido.",
+    impact: "La persona que pide seguido pierde tiempo repitiendo los mismos datos en cada compra, sin sentir que la app “la conoce” pese a ser cliente habitual.",
     shot: { file: "nielsen-07-pantalla-pago.png", caption: "Pantalla de pago." }
   },
   {
@@ -156,6 +196,7 @@ const NIELSEN = [
     severity: 2,
     priority: true,
     finding: "Durante el proceso aparecen promociones, sugerencias y confirmaciones que compiten con la acción principal de completar el pedido. Reducir estos elementos secundarios permitiría jerarquizar mejor la información necesaria para avanzar hacia el pago.",
+    impact: "Aumenta el riesgo de que la persona usuaria abandone la compra a mitad de camino, o termine agregando un gasto no planeado por la insistencia de las promos.",
     shot: { file: "nielsen-08-promocion-flujo.png", caption: "Pantalla donde aparece una sugerencia/promoción durante el flujo." }
   },
   {
@@ -166,6 +207,7 @@ const NIELSEN = [
     severity: 2,
     priority: false,
     finding: "La aplicación ofrece mensajes frente a ciertos problemas, pero no siempre indican de forma clara qué ocurrió y cómo solucionarlo. Un mensaje de error útil no solo debe informar que algo falló, sino orientar al usuario sobre el siguiente paso a seguir.",
+    impact: "Frente a un mensaje de error poco claro, la persona usuaria puede quedarse sin saber qué hacer y abandonar el pedido en lugar de reintentarlo.",
     shot: { file: "nielsen-09-pantalla-error.png", caption: "Pantalla de error encontrada durante las pruebas (pago, stock, etc.)." }
   },
   {
@@ -176,6 +218,7 @@ const NIELSEN = [
     severity: 2,
     priority: true,
     finding: "Existe asistencia dentro de la aplicación, pero algunas funciones necesitan ayuda contextual. En “Mi BK”, por ejemplo, una explicación breve sobre qué son las Coronas, cómo se obtienen y cómo funcionan los Canjes reduciría la necesidad de buscar información fuera de la app.",
+    impact: "La persona usuaria puede terminar sin usar los beneficios del programa de fidelización simplemente por no entender cómo funciona, aun siendo cliente frecuente.",
     shot: { file: "nielsen-10-ayuda-mibk.png", caption: "Sección de Mi BK o de ayuda." }
   }
 ];

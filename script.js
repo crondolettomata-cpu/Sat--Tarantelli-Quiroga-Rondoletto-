@@ -42,7 +42,7 @@ function shotSlot(shot) {
 
 /* Board 1: Leyes UX */
 const leyesGrid = document.getElementById("leyes-grid");
-const verdictLabel = { cumple: "Se cumple", revisar: "Punto a revisar" };
+const verdictLabel = { cumple: "Cumple", rompe: "Rompe" };
 
 LEYES_UX.forEach((law, i) => {
   const card = document.createElement("article");
@@ -52,8 +52,10 @@ LEYES_UX.forEach((law, i) => {
       <span class="card-index">${String(i + 1).padStart(2, "0")}</span>
       <span class="verdict verdict-${law.verdict}">${verdictLabel[law.verdict]}</span>
     </div>
+    <span class="law-category">${law.category}</span>
     <h3>${law.name}</h3>
-    <blockquote>“${law.quote}”<cite>— ${law.author}</cite></blockquote>
+    <blockquote>“${law.quote}”</blockquote>
+    <p class="question"><strong>Pregunta guía:</strong> ${law.question}</p>
     <p class="finding"><strong>En Burger King:</strong> ${law.finding}</p>
   `;
   card.appendChild(shotSlot(law.shot));
@@ -75,6 +77,7 @@ NIELSEN.forEach((h) => {
     <h3>${h.name}</h3>
     <p class="def">${h.def}</p>
     <p class="finding"><strong>Hallazgo en Burger King:</strong> ${h.finding}</p>
+    <p class="impact"><strong>Impacto en la persona usuaria:</strong> ${h.impact}</p>
   `;
   card.appendChild(shotSlot(h.shot));
   nielsenGrid.appendChild(card);

@@ -8,32 +8,38 @@ Cada tarjeta de `index.html` busca automáticamente un archivo con el nombre exa
 indicado abajo. En cuanto guardes la captura real con ese nombre en esta carpeta, el
 tablero la muestra sola — no hay que tocar ni HTML ni JS.
 
-## Tablero 1 — Leyes UX
+## Tablero 1 — Leyes UX (10 de las 14 de la Ficha de referencia rápida)
 
-| Archivo | Qué capturar |
-|---|---|
-| `leyes-01-hick-menu-categorias.png` | Menú principal del tótem/app con las categorías del catálogo. |
-| `leyes-02-fitts-boton-pagar.png` | Pantalla con el botón de Pagar/Añadir al carrito a todo el ancho inferior. |
-| `leyes-03-jakob-carrito.png` | Encabezado de la app mostrando el ícono de carrito arriba a la derecha. |
-| `leyes-04-tesler-personalizar.png` | Pantalla de personalización de la Whopper (agregar/quitar ingredientes). |
-| `leyes-05-miller-resumen-pedido.png` | Resumen del pedido agrupado por bloques antes del pago. |
-| `leyes-06-peakend-confirmacion.png` | Pantalla final de confirmación del pedido. |
-| `leyes-07-estetica-catalogo.png` | Catálogo de combos con fotografías grandes de producto. |
-| `leyes-08-doherty-carga-pago.png` | Momento de confirmar el pago, mostrando (o no) un indicador de carga. |
+| Archivo | Ley | Qué capturar |
+|---|---|---|
+| `leyes-01-fitts-boton-pagar.png` | Ley de Fitts | Pantalla con el botón de Pagar/Añadir al carrito a todo el ancho inferior. |
+| `leyes-02-hick-menu-categorias.png` | Ley de Hick | Menú principal del tótem/app con las categorías del catálogo. |
+| `leyes-03-miller-resumen-pedido.png` | Ley de Miller | Resumen del pedido agrupado por bloques antes del pago. |
+| `leyes-04-occam-promos.png` | Navaja de Occam | Pantalla donde aparece una promoción/sugerencia dentro del flujo de compra. |
+| `leyes-05-tesler-personalizar.png` | Ley de Tesler | Pantalla de personalización de la Whopper (agregar/quitar ingredientes). |
+| `leyes-06-peakend-confirmacion.png` | Regla Peak-End | Pantalla final de confirmación del pedido. |
+| `leyes-07-jakob-carrito.png` | Ley de Jakob | Encabezado de la app mostrando el ícono de carrito arriba a la derecha. |
+| `leyes-08-doherty-carga-pago.png` | Umbral de Doherty | Momento de confirmar el pago, mostrando (o no) un indicador de carga. |
+| `leyes-09-estetica-catalogo.png` | Efecto Estética-Usabilidad | Catálogo de combos con fotografías grandes de producto. |
+| `leyes-10-pareto-inicio.png` | Principio de Pareto | Pantalla de inicio con accesos directos a pedidos frecuentes/combos populares. |
 
-## Tablero 2 — Heurísticas de Nielsen
+No se documentaron (evidencia menos evidente en este producto, según la consigna "no hace
+falta encontrar las 14"): Efecto Von Restorff, Efecto Zeigarnik, Efecto Gradiente de Meta,
+Ley de Postel.
 
-| Archivo | Qué capturar |
-|---|---|
-| `nielsen-01-confirmacion-intermedia.png` | Pantalla de confirmación intermedia del pedido. |
-| `nielsen-02-mibk-coronas.png` | Pantalla de Mi BK / Coronas / Canjes. |
-| `nielsen-03-carrito-modificar.png` | Carrito o pantalla donde se puede volver/modificar el pedido. |
-| `nielsen-04-consistencia-navegacion.png` | Cualquier pantalla del flujo principal, para verificar consistencia de patrones. |
-| `nielsen-05-seleccion-sucursal.png` | Selección/confirmación de sucursal. |
-| `nielsen-06-info-no-visible.png` | Pantalla avanzada del flujo donde no queda visible la sucursal/ubicación elegida. |
-| `nielsen-07-pantalla-pago.png` | Pantalla de pago. |
-| `nielsen-08-promocion-flujo.png` | Pantalla donde aparece una sugerencia/promoción durante el flujo. |
-| `nielsen-09-pantalla-error.png` | Pantalla de error encontrada durante las pruebas (pago, stock, etc.). |
-| `nielsen-10-ayuda-mibk.png` | Sección de Mi BK o de ayuda. |
+## Tablero 2 — Heurísticas de Nielsen (las 10, completas)
+
+| Archivo | Heurística | Qué capturar |
+|---|---|---|
+| `nielsen-01-confirmacion-intermedia.png` | Visibilidad del estado del sistema | Pantalla de confirmación intermedia del pedido. |
+| `nielsen-02-mibk-coronas.png` | Relación sistema–mundo real | Pantalla de Mi BK / Coronas / Canjes. |
+| `nielsen-03-carrito-modificar.png` | Control y libertad para el usuario | Carrito o pantalla donde se puede volver/modificar el pedido. |
+| `nielsen-04-consistencia-navegacion.png` | Consistencia y estándares | Cualquier pantalla del flujo principal, para verificar consistencia de patrones. |
+| `nielsen-05-seleccion-sucursal.png` | Prevención de errores | Selección/confirmación de sucursal. |
+| `nielsen-06-info-no-visible.png` | Reconocer antes que recordar | Pantalla avanzada del flujo donde no queda visible la sucursal/ubicación elegida. |
+| `nielsen-07-pantalla-pago.png` | Flexibilidad y eficiencia de uso | Pantalla de pago. |
+| `nielsen-08-promocion-flujo.png` | Diseño estético y minimalista | Pantalla donde aparece una sugerencia/promoción durante el flujo. |
+| `nielsen-09-pantalla-error.png` | Reconocer, diagnosticar y recuperarse de errores | Pantalla de error encontrada durante las pruebas (pago, stock, etc.). |
+| `nielsen-10-ayuda-mibk.png` | Ayuda y documentación | Sección de Mi BK o de ayuda. |
 
 Formato recomendado: PNG o JPG, recorte a la pantalla relevante (no hace falta full-page).

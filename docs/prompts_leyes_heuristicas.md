@@ -1,83 +1,192 @@
 # Prompts utilizados — Tableros de Leyes UX y Heurísticas de Nielsen
 
 **Equipo:** Tarantelli · Quiroga · Rondoletto
-**Herramienta de IA:** Claude (Claude Code, Anthropic)
-**Objetivo:** construir dos tableros web (Leyes UX / Heurísticas de Nielsen) que evalúan la
-experiencia de pedido de Burger King, a partir del material de la materia (*Gestalt, leyes
-UX y heurísticas de Nielsen*) y del análisis ya elaborado por el equipo.
+**Producto evaluado:** Burger King (app / web de pedidos)
+**Herramienta de IA usada en todos los prompts:** Claude Code (Anthropic), sesión conectada al repositorio de GitHub del equipo.
+
+Este documento registra los prompts reales usados para construir el sitio (no un resumen):
+qué se le pidió a la IA, el texto exacto de cada pedido, y qué devolvió / qué hubo que
+corregir. Los prompts están en el orden cronológico en que se enviaron durante la sesión.
 
 ---
 
-## 1. Insumos que aportó el equipo (no generados por IA)
+## Prompt 1 — Consigna inicial y contenido base
 
-Antes de pedirle nada a la IA, el equipo ya había producido a mano:
+**Objetivo del prompt:** pedirle a la IA que arme los dos tableros completos (Leyes UX y
+Heurísticas de Nielsen) a partir de la consigna de la materia, adjuntando el PPTX de
+cátedra y todo el análisis que el equipo ya había redactado a mano (el ejemplo de 8 leyes
+UX aplicadas a Burger King, y la evaluación completa de las 10 heurísticas de Nielsen con
+severidad y la discusión interna sobre qué 5 hallazgos priorizar).
 
-- La evaluación completa de las **10 heurísticas de Nielsen** aplicadas a Burger King,
-  con gravedad (escala 0–4) y una discusión interna sobre qué 5 hallazgos priorizar
-  (Relación sistema–mundo real, Prevención de errores, Flexibilidad y eficiencia,
-  Diseño estético y minimalista, Ayuda y documentación).
-- Un borrador de ejemplo con **8 leyes de UX** aplicadas a Burger King (Hick, Fitts,
-  Jakob y Tesler, entre otras).
-- El PDF/PPTX de cátedra (*Gestalt, leyes UX y heurísticas de Nielsen*) con las
-  definiciones oficiales de cada heurística y la consigna del TP.
+**Prompt completo (texto exacto):**
 
-La IA se usó para estructurar, completar y publicar ese trabajo — no para inventar la
-evaluación desde cero.
+> @"/root/.claude/uploads/.../16fc59c3-Gestalt_leyes_UX_y_heur_sticas_de_Nielsen.pptx" * Usando herramientas de inteligencia artificial, cada equipo deberá crear dos tableros: uno para las leyes UX y otro para heurísticas de Nielsen.
+> * Creados los tableros, hacer las evaluaciones correspondientes.
+> * Es importante ser precisos en el análisis, acompañar capturas de pantalla de los puntos de dolor detectados y explicar qué pasa.
+> * Puede ser un solo archivo o dos. Tienen que subirlo a GitHub y luego hacer deploy en Vercel.
+> * Deberán armar un documento con los prompts utilizados "prompts_leyes_heuristicas" en el Drive del equipo.
+>
+> Tenes que hacer todo esto en base a burger king
+>
+> [seguido de un ejemplo práctico de 8 leyes UX aplicadas a Burger King (Hick, Fitts, Jakob, Tesler, y ejemplos adicionales de heurísticas), y de la evaluación completa, ya redactada por el equipo, de las 10 heurísticas de Nielsen aplicadas a Burger King con severidad 0–4, incluyendo la discusión interna sobre cuáles 5 hallazgos priorizar: Relación sistema–mundo real, Prevención de errores, Flexibilidad y eficiencia de uso, Diseño estético y minimalista, y Ayuda y documentación — todas calificadas en severidad 2, con la justificación explícita de por qué no se usó 3 o 4.]
+
+**Resultado y ajustes:**
+- La IA leyó el PPTX de cátedra (extrajo las definiciones oficiales de cada heurística de
+  Nielsen y de las leyes UX explicadas ahí) y detectó que el entorno de ejecución **no
+  tiene acceso a internet abierto** (solo GitHub/npm/pypi), por lo que no podía navegar la
+  app/web real de Burger King para sacar capturas propias.
+- En vez de inventar capturas falsas, propuso —y así se aceptó— construir el sitio con un
+  **casillero de captura por tarjeta**, con el nombre de archivo exacto esperado, para que
+  el equipo complete con sus propias capturas reales.
+- Generó un sitio de un solo archivo (`index.html` + `style.css` + `data.js` + `script.js`,
+  sin build) con Tablero 1 (Leyes UX, 8 leyes) y Tablero 2 (Heurísticas de Nielsen, 10
+  heurísticas), volcando el análisis ya redactado por el equipo y completando el Tablero 1
+  con 4 leyes UX adicionales (Miller, Peak-End, Estética-Usabilidad, Umbral de Doherty) para
+  llegar a 8, porque el equipo solo tenía redactadas 4 (Hick, Fitts, Jakob, Tesler).
+- Ajuste posterior necesario: esas 4 leyes adicionales se habían elegido por criterio propio
+  de la IA a partir de la bibliografía general de "Laws of UX", **sin la Ficha de referencia
+  rápida de cátedra** (14 leyes oficiales) — ver Prompt 3.
+- Intentó pushear a GitHub y encontró que la app de GitHub conectada a la sesión no tenía
+  permiso de escritura sobre el repositorio (error 403 tanto por `git push` como por la API).
+  Quedó con el trabajo commiteado localmente a la espera de que se habilite el acceso.
 
 ---
 
-## 2. Prompt principal (consigna al agente)
+## Prompt 2 — Reintento de push
 
-> "Usando herramientas de inteligencia artificial, cada equipo deberá crear dos
-> tableros: uno para las leyes UX y otro para heurísticas de Nielsen. Creados los
-> tableros, hacer las evaluaciones correspondientes. Es importante ser precisos en el
-> análisis, acompañar capturas de pantalla de los puntos de dolor detectados y explicar
-> qué pasa. Puede ser un solo archivo o dos. Tienen que subirlo a GitHub y luego hacer
-> deploy en Vercel. Deberán armar un documento con los prompts utilizados
-> 'prompts_leyes_heuristicas' en el Drive del equipo. Tenes que hacer todo esto en base
-> a burger king" — seguido del ejemplo de las 8 leyes UX y de la evaluación completa de
-> las 10 heurísticas de Nielsen con sus gravedades, ya redactada por el equipo.
+**Objetivo del prompt:** que la IA seguidera intentando publicar en GitHub sin que el
+equipo tuviera que estar pendiente manualmente.
 
-## 3. Prompts de trabajo (pasos que se le pidieron al agente)
+**Prompt completo (texto exacto):**
 
-1. **Lectura de la fuente:** "Leé el PPTX de cátedra (`Gestalt_leyes_UX_y_heuristicas_de_Nielsen.pptx`)
-   y extraé las definiciones oficiales de cada heurística de Nielsen y de las leyes UX
-   que se explican en el material, para usarlas como base de cada tarjeta."
-2. **Diseño de la estructura:** "Armá un sitio de un solo archivo (HTML/CSS/JS, sin
-   build) con dos tableros tipo board (grilla de tarjetas), uno por cada ley/heurística,
-   con: nombre, definición oficial, ejemplo/hallazgo en Burger King, veredicto o
-   gravedad, y un casillero para la captura de pantalla correspondiente."
-3. **Completar el Tablero 1 (Leyes UX):** "Tomá los 4 ejemplos ya redactados por el
-   equipo (Hick, Fitts, Jakob, Tesler) y sumá 4 leyes más del listado de Laws of UX
-   citado en la bibliografía de la cátedra (Ley de Miller, Regla Peak-End, Efecto
-   Estética-Usabilidad, Umbral de Doherty), con un ejemplo propio aplicado a Burger King
-   para cada una."
-4. **Completar el Tablero 2 (Heurísticas de Nielsen):** "Tomá la evaluación de las 10
-   heurísticas ya redactada por el equipo, con sus gravedades y los 5 hallazgos
-   priorizados, y volcala en las tarjetas del tablero sin alterar el criterio de
-   severidad que ya habíamos definido."
-5. **Manejo honesto de las capturas:** "El entorno no tiene acceso a la app/web real de
-   Burger King. En vez de inventar capturas, armá un casillero por tarjeta con el
-   nombre de archivo exacto esperado, para que el equipo solo tenga que arrastrar sus
-   propias capturas reales a `/screenshots` antes de la entrega."
-6. **QA visual:** "Levantá el sitio en un servidor local, renderizalo con un navegador
-   headless y revisá que los tres tableros (Leyes UX, Heurísticas de Nielsen,
-   Metodología) no tengan errores de layout ni de JavaScript."
-7. **Publicación:** "Subí todo a la rama `claude/bk-ux-heuristics-boards-ap1jfq` del
-   repositorio del equipo en GitHub, y dejá el proyecto listo para deploy en Vercel
-   (sin build command, sitio estático)."
+> reintenta el push cuando este resuelto porfavor
 
-## 4. Qué generó la IA vs. qué es autoría del equipo
+**Resultado y ajustes:**
+- La IA programó un reintento automático de `git push` cada 20 minutos (usando su
+  herramienta de recordatorios internos) hasta que el acceso a GitHub quede habilitado, en
+  vez de pedirle al equipo que esté chequeando el estado.
+
+---
+
+## Prompt 3 — Corrección de alcance contra la consigna ampliada
+
+**Objetivo del prompt:** el equipo pegó la consigna ampliada/aclarada de la cátedra (con
+requisitos más específicos: las 14 leyes de una "Ficha de referencia rápida" como checklist
+para el Tablero 1, cobertura mínima de 8, las 10 heurísticas completas para el Tablero 2,
+formato exacto del documento de prompts, y entregables finales) y le pidió a la IA que
+verificara el sitio contra esos requisitos **antes** de hacer el push.
+
+**Prompt completo (texto exacto):**
+
+> fijate que cumpla con todo esto antes de hacer el push:
+> Algunas aclaraciones sobre la tarea de análisis de leyes y heurísticas.
+>
+> Qué tienen que crear
+>
+> * Dos tableros de evaluación, construidos como una mini-web con asistencia de IA generativa de código (Claude Code, Cursor, v0, Lovable, Bolt o similar).
+> * Puede ser un solo proyecto con dos vistas/secciones, o dos proyectos separados; en ambos casos tienen que quedar desplegados en Vercel.
+> * Cada tablero funciona como un documento de evaluación navegable: por cada ley o heurística, muestra el hallazgo, la evidencia (captura) y el análisis escrito. No hace falta funcionalidad de backend (es contenido estático que ustedes completan con su análisis real).
+>
+> Tablero 1: leyes UX
+>
+> * Recorran las navegaciones principales de su producto usando las 14 leyes de la Ficha de referencia rápida como checklist. No hace falta encontrar las 14 en el mismo producto: prioricen las más evidentes.
+> * Sugerencia de cobertura mínima: documenten al menos 8 de las 14 leyes con evidencia real (cumplida o rota). Es un piso orientativo, ajustable según lo que efectivamente encuentren en su producto.
+>
+> Por cada ley documentada, el tablero muestra:
+>
+> * Ley UX: nombre de la ley (de las 14 de la Ficha de referencia).
+> * Cumple / rompe: indicar si el producto respeta la ley o la incumple en el punto analizado.
+> * Captura: screenshot del punto exacto de la interfaz donde se observa.
+> * Explicación: 1-2 frases que respondan la pregunta guía de esa ley: qué pasa y por qué.
+>
+> Tablero 2: heurísticas de Nielsen
+> A diferencia de las leyes UX, acá evalúan las 10 heurísticas completas: es el estándar de una evaluación heurística real.
+>
+> Por cada heurística, el tablero muestra:
+>
+> * Heurística: una de las 10 heurísticas de Nielsen (las 10, sin excepción).
+> * Severidad: escala de Nielsen 0-4: 0 no es un problema, 1 cosmético, 2 menor, 3 mayor, 4 catástrofe de usabilidad.
+> * Captura: screenshot del punto de dolor (severidad ≥ 1) o del punto donde se cumple bien (severidad 0).
+> * Explicación: qué pasa, por qué rompe o cumple la heurística, y qué impacto tiene en la persona usuaria.
+>
+> Documento de prompts ("prompts_leyes_heuristicas")
+> Se sube al Drive del equipo con ese nombre exacto. No es un anexo protocolar: nos interesa ver cómo iteraron con la IA, qué funcionó y qué no. Por cada prompt relevante, tiene que incluir:
+>
+> * Herramienta de IA usada: Claude Code, Cursor, v0, ChatGPT, etc.
+> * Objetivo del prompt: qué le pidieron a la IA y para qué parte del tablero.
+> * Prompt completo: el texto exacto, no un resumen.
+> * Resultado y ajustes: qué devolvió la IA y qué tuvieron que corregir o reformular.
+>
+> Entregables
+>
+> * Link al tablero (o los dos tableros) desplegado en Vercel.
+> * Link al repositorio en GitHub, público o compartido con el equipo docente.
+> * Documento "prompts_leyes_heuristicas" en el Drive del equipo.
+>
+> Cualquier duda, nos escriben! (editado)
+
+**Resultado y ajustes:**
+- La IA detectó dos brechas contra la versión anterior del sitio: (1) el Tablero 1 estaba
+  usando 4 leyes elegidas por criterio propio en vez de la Ficha de referencia rápida oficial
+  de 14 leyes citada en la consigna, y (2) el documento de prompts no seguía el formato de 4
+  campos pedido (Herramienta / Objetivo / Prompt completo / Resultado y ajustes) — tenía
+  resúmenes en vez del texto exacto de cada intercambio.
+- Como el enlace a la Ficha de referencia rápida es un Google Doc y el entorno de ejecución
+  tiene bloqueado el acceso a `docs.google.com`, la IA no pudo leerlo directamente. En vez de
+  inventar o suponer los 14 nombres, le preguntó al equipo cómo proceder (pegar el listado
+  real vs. usar una selección estándar de lawsofux.com) — el equipo optó por pegar el
+  listado real.
+- Este documento de prompts se reescribió por completo en el formato de 4 campos por
+  prompt, usando el texto exacto de cada mensaje enviado durante la sesión (no resúmenes).
+
+---
+
+## Prompt 4 — Ficha de referencia rápida (adjunto)
+
+**Objetivo del prompt:** entregarle a la IA el contenido real de la Ficha de referencia
+rápida (que no se podía leer por estar en Google Docs, bloqueado en el entorno) para que
+el Tablero 1 usara exactamente esas 14 leyes oficiales en vez de una selección propia.
+
+**Prompt completo (texto exacto):**
+
+> @"/root/.claude/uploads/.../c7089282-Gu_a_de_leyes_UX.pdf"
+
+(Adjunto: PDF de la cátedra "FICHA DE REFERENCIA RÁPIDA — Leyes de UX para analizar
+diseños", basado en lawsofux.com, con las 14 leyes agrupadas en 5 categorías: Percepción y
+jerarquía visual, Decisión y carga cognitiva, Memoria y motivación, Consistencia y
+robustez, y Priorización — cada una con su "qué dice" y su pregunta guía.)
+
+**Resultado y ajustes:**
+- La IA leyó el PDF y extrajo las 14 leyes con su texto oficial (nombre, "qué dice" y
+  pregunta guía) y **reescribió por completo el Tablero 1** para dejar de usar 4 leyes
+  elegidas por criterio propio (Miller, Peak-End, Estética-Usabilidad y Doherty ya estaban
+  bien, pero les faltaba la pregunta guía oficial) y sumó dos leyes más de la ficha —
+  Navaja de Occam y Principio de Pareto — llegando a **10 de las 14** documentadas.
+- Cada tarjeta del Tablero 1 pasó a mostrar explícitamente la pregunta guía de la ficha y a
+  responderla en 1-2 frases (antes la explicación no estaba atada a esa pregunta puntual).
+- El veredicto de cada ley se estandarizó a **Cumple / Rompe** (antes usaba una tercera
+  etiqueta, "Punto a revisar", que no estaba pedida en la consigna).
+- El Tablero 2 (Nielsen) se completó con un campo explícito de **Impacto en la persona
+  usuaria** por heurística, separado del hallazgo, para cubrir el tercer elemento que pide
+  la consigna ampliada ("qué impacto tiene en la persona usuaria").
+- Se actualizaron `screenshots/README.md` (nuevos nombres de archivo de captura para el
+  Tablero 1) y el resto de la documentación (`README.md`, este mismo archivo) para
+  reflejar la cobertura real: 10/14 leyes UX + 10/10 heurísticas de Nielsen.
+
+---
+
+## Qué generó la IA vs. qué es autoría del equipo
 
 | Contenido | Autoría |
 |---|---|
-| Las 10 heurísticas de Nielsen aplicadas a BK (hallazgos + gravedad + priorización) | **Equipo** (la IA solo lo estructuró en el tablero) |
-| Leyes de Hick, Fitts, Jakob y Tesler aplicadas a BK | **Equipo** (la IA solo lo estructuró en el tablero) |
-| Leyes de Miller, Peak-End, Estética-Usabilidad y Umbral de Doherty aplicadas a BK | **IA**, para completar las 8 leyes del Tablero 1 |
+| Las 10 heurísticas de Nielsen aplicadas a BK (hallazgos + severidad + priorización de las 5 más sólidas) | **Equipo** — la IA solo lo estructuró en tarjetas |
+| Leyes de Hick, Fitts, Jakob y Tesler aplicadas a BK | **Equipo** — la IA solo lo estructuró en tarjetas |
+| Leyes adicionales del Tablero 1 hasta llegar a 10/14 (Miller, Occam, Peak-End, Doherty, Estética-Usabilidad, Pareto) | **IA**, a partir de la Ficha de referencia rápida de cátedra |
 | Estructura, diseño visual y código del sitio (HTML/CSS/JS) | **IA** |
 | Redacción final / precisión de cada hallazgo | **IA**, sobre la base del análisis del equipo |
+| Casilleros de captura (en vez de capturas inventadas) | **Decisión de la IA**, por la restricción de red del entorno — validada por el equipo |
 
 ---
 
 *Documento generado como parte del trabajo práctico — copiar a la carpeta del equipo en
-Google Drive según la consigna.*
+Google Drive con el nombre exacto **prompts_leyes_heuristicas**, según la consigna.*
