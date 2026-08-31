@@ -104,9 +104,9 @@ const LEYES_UX = [
     name: "Principio de Pareto",
     quote: "En muchos sistemas, el 80% del efecto proviene del 20% de las causas.",
     question: "¿El diseño prioriza visual y funcionalmente las tareas más usadas por la mayoría?",
-    verdict: "cumple",
-    finding: "Sí: la pantalla de inicio destaca accesos directos como “Pedir de nuevo” y los combos más pedidos, priorizando las tareas que concentran la mayoría de los pedidos por sobre el catálogo completo.",
-    shot: { file: "leyes-10-pareto-inicio.png", caption: "Pantalla de inicio con accesos directos a pedidos frecuentes/combos populares." }
+    verdict: "rompe",
+    finding: "No: la pantalla de inicio abre con dos banners grandes —una promo de la línea “King's Selection” y un cartel para activar la geolocalización— y no con accesos directos a “Pedir de nuevo” ni a los combos más pedidos. El espacio más valioso de la pantalla se usa para marketing genérico en vez de priorizar la tarea que la mayoría de las personas usuarias repite en cada visita.",
+    shot: { file: "leyes-10-pareto-banners-promocionales.png", caption: "Pantalla de inicio con los banners promocionales (King's Selection y geolocalización) por sobre accesos directos a pedidos frecuentes." }
   }
 ];
 

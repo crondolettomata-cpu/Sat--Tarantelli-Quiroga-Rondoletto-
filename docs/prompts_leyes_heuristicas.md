@@ -257,6 +257,42 @@ combo), y el equipo aclaró:
 
 ---
 
+## Prompt 7 — Corrección con evidencia real (tercera captura del equipo)
+
+**Objetivo del prompt:** el equipo mandó una tercera captura real (la pantalla de inicio
+de burgerking.com.ar) y, a diferencia de las dos veces anteriores, indicó directamente qué
+frase estaba mal en vez de pedir que la IA adivinara.
+
+**Prompt completo (texto exacto):**
+
+> [captura de pantalla adjunta: pantalla de inicio de burgerking.com.ar con la barra
+> superior (Pide aquí / Restaurantes / Mi BK / Cupones, Coronas y carrito), una franja de
+> "Coronas disponibles" con botón "Revisar Canjes", y dos banners grandes: uno de la línea
+> "King's Selection" ("No te quedes sin probarlas!") y otro para activar la
+> geolocalización ("Activá tu geolocalización y disfrutá como rey")]
+>
+> en el principio de pareto no se cumple lo que habías puesto: En Burger King: Sí: la
+> pantalla de inicio destaca accesos directos como "Pedir de nuevo" y los combos más
+> pedidos, priorizando las tareas que concentran la mayoría de los pedidos por sobre el
+> catálogo completo.
+
+**Resultado y ajustes:**
+- Como el equipo ya señaló la frase exacta a corregir y qué muestra la pantalla real, la
+  IA no volvió a preguntar — reescribió directo la tarjeta.
+- Cambió el veredicto de **Cumple → Rompe**: la pantalla de inicio real no tiene accesos
+  directos a "Pedir de nuevo" ni a combos populares; el espacio principal lo ocupan dos
+  banners promocionales genéricos (King's Selection y geolocalización), es decir, la
+  heurística se rompe porque el diseño prioriza marketing por sobre la tarea que la
+  mayoría de las personas usuarias repite (volver a pedir lo de siempre).
+- Se renombró el archivo de captura esperado a
+  `leyes-10-pareto-banners-promocionales.png`.
+- Con esta van **tres de tres** leyes redactadas como hipótesis por la IA que tuvieron que
+  corregirse al contrastarlas con capturas reales (Fitts, Miller, Pareto) — confirma que
+  conviene tratar cualquier hallazgo del Tablero 1 como provisorio hasta que el equipo lo
+  chequee contra la app real.
+
+---
+
 ## Qué generó la IA vs. qué es autoría del equipo
 
 | Contenido | Autoría |

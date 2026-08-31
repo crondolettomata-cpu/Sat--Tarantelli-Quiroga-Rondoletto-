@@ -21,7 +21,7 @@ tablero la muestra sola — no hay que tocar ni HTML ni JS.
 | `leyes-07-jakob-carrito.png` | Ley de Jakob | Encabezado de la app mostrando el ícono de carrito arriba a la derecha. |
 | `leyes-08-doherty-carga-pago.png` | Umbral de Doherty | Momento de confirmar el pago, mostrando (o no) un indicador de carga. |
 | `leyes-09-estetica-catalogo.png` | Efecto Estética-Usabilidad | Catálogo de combos con fotografías grandes de producto. |
-| `leyes-10-pareto-inicio.png` | Principio de Pareto | Pantalla de inicio con accesos directos a pedidos frecuentes/combos populares. |
+| `leyes-10-pareto-banners-promocionales.png` | Principio de Pareto | Pantalla de inicio con los banners promocionales (King's Selection y geolocalización) por sobre accesos directos a pedidos frecuentes. |
 
 No se documentaron (evidencia menos evidente en este producto, según la consigna "no hace
 falta encontrar las 14"): Efecto Von Restorff, Efecto Zeigarnik, Efecto Gradiente de Meta,
