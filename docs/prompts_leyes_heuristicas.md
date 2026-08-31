@@ -175,6 +175,43 @@ robustez, y Priorización — cada una con su "qué dice" y su pregunta guía.)
 
 ---
 
+## Prompt 5 — Corrección con evidencia real (primera captura del equipo)
+
+**Objetivo del prompt:** el equipo empezó a probar la app real de Burger King y mandó la
+primera captura real (pantalla de personalización de un combo, con el botón "Agregar" y el
+carrusel de "Gustitos"), pidiendo corregir la tarjeta de Ley de Fitts en base a lo que se
+ve ahí — no a la suposición inicial de la IA.
+
+**Prompt completo (texto exacto):**
+
+> [captura de pantalla adjunta: pantalla de personalización de combo en burgerking.com.ar,
+> con el menú de categorías arriba, el resumen del pedido con "Acompañamientos Regular:
+> Papas Fritas Regular" y "Bebidas Regular: Pepsi Regular", una sección "Gustitos" con un
+> carrusel de extras (Taza Galáctico $9.990, con un botón "+" circular chico, y flechas de
+> navegación "<" ">" también circulares y chicas), y el botón "Agregar - $20.700,00" en
+> rojo ocupando todo el ancho inferior]
+>
+> hay que cambiar lo de la ley de fitts
+
+**Resultado y ajustes:**
+- Como el pedido era ambiguo (¿cambiar el veredicto, cambiar solo el texto, o algo distinto?),
+  la IA preguntó en vez de reescribir a ciegas — para no pisar una lectura que era del
+  equipo, no suya.
+- El equipo aclaró: el problema es que, si bien el CTA principal ("Agregar") es grande y
+  cumple la ley, **otros elementos de uso frecuente en la misma pantalla son chicos** — el
+  botón "+" para sumar un extra y las flechas del carrusel de Gustitos — y esos sí exigen
+  precisión.
+- La IA cambió el veredicto de la tarjeta de **Cumple → Rompe**, reescribió el hallazgo para
+  reflejar el matiz (CTA principal grande, pero controles secundarios de uso frecuente
+  chicos) y renombró el archivo de captura esperado a
+  `leyes-01-fitts-elementos-chicos.png` para que el equipo suba ahí esa misma captura real
+  que ya sacaron.
+- Este es el primer hallazgo del Tablero 1 respaldado por una captura real del producto (no
+  una hipótesis) — el resto de las 10 leyes documentadas todavía están pendientes de
+  contrastar contra capturas reales a medida que el equipo recorra la app.
+
+---
+
 ## Qué generó la IA vs. qué es autoría del equipo
 
 | Contenido | Autoría |

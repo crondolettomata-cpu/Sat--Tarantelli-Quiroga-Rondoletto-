@@ -12,7 +12,7 @@ tablero la muestra sola — no hay que tocar ni HTML ni JS.
 
 | Archivo | Ley | Qué capturar |
 |---|---|---|
-| `leyes-01-fitts-boton-pagar.png` | Ley de Fitts | Pantalla con el botón de Pagar/Añadir al carrito a todo el ancho inferior. |
+| `leyes-01-fitts-elementos-chicos.png` | Ley de Fitts | Pantalla de personalización de combo: botón “Agregar” grande abajo, pero el “+” de extras y las flechas del carrusel de Gustitos son chicos. |
 | `leyes-02-hick-menu-categorias.png` | Ley de Hick | Menú principal del tótem/app con las categorías del catálogo. |
 | `leyes-03-miller-resumen-pedido.png` | Ley de Miller | Resumen del pedido agrupado por bloques antes del pago. |
 | `leyes-04-occam-promos.png` | Navaja de Occam | Pantalla donde aparece una promoción/sugerencia dentro del flujo de compra. |

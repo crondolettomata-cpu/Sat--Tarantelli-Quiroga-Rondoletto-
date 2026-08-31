@@ -14,9 +14,9 @@ const LEYES_UX = [
     name: "Ley de Fitts",
     quote: "El tiempo para alcanzar un objetivo depende de su tamaño y de la distancia al mismo.",
     question: "¿Los botones o CTAs de uso frecuente son grandes y están cerca (pulgar en mobile, cursor en desktop)?",
-    verdict: "cumple",
-    finding: "Sí: el botón de “Pagar” / “Añadir al carrito” ocupa todo el ancho inferior de la pantalla, a un toque de pulgar en mobile y sin necesitar precisión con el cursor en desktop.",
-    shot: { file: "leyes-01-fitts-boton-pagar.png", caption: "Pantalla con el botón de Pagar/Añadir al carrito a todo el ancho inferior." }
+    verdict: "rompe",
+    finding: "Parcialmente: el botón principal “Agregar” es grande y ocupa todo el ancho inferior de la pantalla, pero otras acciones de uso frecuente en esa misma pantalla — el “+” para sumar un gustito/extra y las flechas para recorrer ese carrusel — son círculos muy chicos que exigen precisión, sin el margen de error que pide la ley para un CTA que se usa seguido.",
+    shot: { file: "leyes-01-fitts-elementos-chicos.png", caption: "Pantalla de personalización de combo: botón “Agregar” grande abajo, pero el “+” de extras y las flechas del carrusel de Gustitos son chicos." }
   },
   {
     id: "hick",
