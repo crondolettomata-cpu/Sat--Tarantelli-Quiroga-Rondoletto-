@@ -34,9 +34,9 @@ const LEYES_UX = [
     name: "Ley de Miller",
     quote: "La memoria de trabajo retiene solo 7 (± 2) elementos.",
     question: "¿La información está agrupada en bloques (chunks) manejables?",
-    verdict: "cumple",
-    finding: "Sí: el resumen del pedido agrupa la información en bloques (producto principal / acompañamiento / bebida) en lugar de listar cada ítem y modificador por separado.",
-    shot: { file: "leyes-03-miller-resumen-pedido.png", caption: "Resumen del pedido agrupado por bloques antes del pago." }
+    verdict: "rompe",
+    finding: "No del todo: adentro del carrito el combo sí lista sus 3 componentes bajo un mismo ítem, pero es la única agrupación real de la pantalla. El resto — detalles de la tienda, 4 modos de entrega, hora de recogida, carrito, código promocional y total — se muestra todo junto, sin dividir el proceso en pasos, superando lo que se puede retener de un vistazo. Los controles de cantidad (“–” / “+”) además son círculos chicos, el mismo patrón de botones pequeños ya señalado en la Ley de Fitts.",
+    shot: { file: "leyes-03-miller-pantalla-carrito.png", caption: "Pantalla completa de “Pide Para Llevar”: detalles de tienda, modos de entrega, hora, carrito, promo y total, todo junto." }
   },
   {
     id: "occam",

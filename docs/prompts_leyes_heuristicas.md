@@ -212,6 +212,51 @@ ve ahí — no a la suposición inicial de la IA.
 
 ---
 
+## Prompt 6 — Corrección con evidencia real (segunda captura del equipo)
+
+**Objetivo del prompt:** el equipo mandó una segunda captura real (pantalla completa de
+"Pide Para Llevar": detalles de tienda, modos de entrega, hora de recogida, carrito con el
+combo y su total) pidiendo corregir la tarjeta de Ley de Miller, que hasta ese momento
+seguía con una hipótesis de la IA sin contrastar.
+
+**Prompt completo (texto exacto):**
+
+> [captura de pantalla adjunta: pantalla "Pide Para Llevar" de burgerking.com.ar con
+> "Detalles del restaurante" (dirección de la tienda y 4 opciones de entrega: Pedido al
+> Auto, Retirar, Para Servir, Servicio a la mesa), "Hora de recogida" (botón "Ahora"), y a
+> la derecha "Tu carrito" con "Combo Deluxe King Doble King" y sus 3 sub-ítems listados,
+> botones Editar/Eliminar, control de cantidad con "–"/"+", campo de código promocional y
+> total; debajo empieza a asomar una sección "Gustitos"]
+>
+> hay que cambiar la ley de miller tambien
+
+La IA preguntó qué específicamente había que corregir (el carrito sí agrupa bien el
+combo), y el equipo aclaró:
+
+> el resumen del pedido no cumple con esto que pusiste: Sí: el resumen del pedido agrupa
+> la información en bloques (producto principal / acompañamiento / bebida) en lugar de
+> listar cada ítem y modificador por separado. además tiene lo que explicaste en el uno
+
+**Resultado y ajustes:**
+- La IA había afirmado que el resumen del pedido agrupaba la información en bloques por
+  categoría (producto principal / acompañamiento / bebida) — una hipótesis razonable pero
+  **no verificada**, y la captura real la contradice: dentro del carrito solo hay un
+  agrupamiento real (el combo con sus 3 sub-ítems); el resto de la pantalla (tienda, 4
+  modos de entrega, hora, carrito, promo, total, más "Gustitos" debajo) se presenta todo
+  junto, sin dividir el proceso en pasos.
+- La IA cambió el veredicto de **Cumple → Rompe**, reescribió el hallazgo para reflejar
+  que la única agrupación real es la del combo y que el resto de la pantalla no reduce la
+  carga de memoria, y sumó una mención a que los controles de cantidad ("–"/"+") repiten
+  el mismo patrón de botones chicos ya señalado en la Ley de Fitts (lo que el equipo pedía
+  con "además tiene lo que explicaste en el uno").
+- Se renombró el archivo de captura esperado a `leyes-03-miller-pantalla-carrito.png`.
+- Este intercambio deja un patrón claro para el resto del tablero: las leyes que la IA
+  redactó sin ver el producto real quedan como hipótesis hasta que una captura del equipo
+  las confirma o las corrige — dos de dos hasta ahora (Fitts y Miller) tuvieron que
+  corregirse al contrastarlas con la app real.
+
+---
+
 ## Qué generó la IA vs. qué es autoría del equipo
 
 | Contenido | Autoría |

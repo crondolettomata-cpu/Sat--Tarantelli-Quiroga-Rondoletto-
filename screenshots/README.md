@@ -14,7 +14,7 @@ tablero la muestra sola — no hay que tocar ni HTML ni JS.
 |---|---|---|
 | `leyes-01-fitts-elementos-chicos.png` | Ley de Fitts | Pantalla de personalización de combo: botón “Agregar” grande abajo, pero el “+” de extras y las flechas del carrusel de Gustitos son chicos. |
 | `leyes-02-hick-menu-categorias.png` | Ley de Hick | Menú principal del tótem/app con las categorías del catálogo. |
-| `leyes-03-miller-resumen-pedido.png` | Ley de Miller | Resumen del pedido agrupado por bloques antes del pago. |
+| `leyes-03-miller-pantalla-carrito.png` | Ley de Miller | Pantalla completa de "Pide Para Llevar": detalles de tienda, modos de entrega, hora, carrito, promo y total, todo junto. |
 | `leyes-04-occam-promos.png` | Navaja de Occam | Pantalla donde aparece una promoción/sugerencia dentro del flujo de compra. |
 | `leyes-05-tesler-personalizar.png` | Ley de Tesler | Pantalla de personalización de la Whopper (agregar/quitar ingredientes). |
 | `leyes-06-peakend-confirmacion.png` | Regla Peak-End | Pantalla final de confirmación del pedido. |
