@@ -160,11 +160,11 @@ const NIELSEN = [
     n: 5,
     name: "Prevención de errores",
     def: "Es mejor prevenir la aparición de errores que generar buenos mensajes de error. Hay que eliminar las condiciones propensas a error.",
-    severity: 2,
-    priority: true,
-    finding: "Algunas restricciones o decisiones relevantes aparecen recién cuando el usuario ya avanzó en el recorrido. Mostrar antes información como la sucursal seleccionada, su disponibilidad o las condiciones del pedido (para consumir aquí / para llevar) permitiría prevenir errores en lugar de corregirlos después.",
-    impact: "El usuario puede armar todo un pedido personalizado y descubrir recién al pagar que la sucursal no lo tiene disponible, perdiendo el trabajo hecho y el tiempo invertido.",
-    shot: { file: "nielsen-05-seleccion-sucursal.png", caption: "Selección/confirmación de sucursal." }
+    severity: 0,
+    priority: false,
+    finding: "La sucursal se define desde el principio del recorrido —antes de armar el pedido— y cada paso siguiente se va verificando contra esa selección (disponibilidad de productos, modo de entrega), en vez de dejar que el usuario avance y se encuentre con una restricción recién al pagar. No se relevó un caso concreto donde el sistema deje avanzar hacia un error evitable.",
+    impact: "Al confirmar la disponibilidad desde el inicio, la persona usuaria arma su pedido con la certeza de que lo va a poder completar, sin riesgo de perder el trabajo hecho ni el tiempo invertido.",
+    shot: { file: "nielsen-05-seleccion-sucursal.png", caption: "Selección de sucursal al inicio del flujo, antes de armar el pedido." }
   },
   {
     id: "n6",

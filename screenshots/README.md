@@ -35,7 +35,7 @@ Ley de Postel.
 | `nielsen-02-mibk-coronas.png` | Relación sistema–mundo real | Pantalla de Mi BK / Coronas / Canjes. |
 | `nielsen-03-carrito-modificar.png` | Control y libertad para el usuario | Carrito o pantalla donde se puede volver/modificar el pedido. |
 | `nielsen-04-consistencia-navegacion.png` | Consistencia y estándares | Cualquier pantalla del flujo principal, para verificar consistencia de patrones. |
-| `nielsen-05-seleccion-sucursal.png` | Prevención de errores | Selección/confirmación de sucursal. |
+| `nielsen-05-seleccion-sucursal.png` | Prevención de errores | Selección de sucursal al inicio del flujo, antes de armar el pedido. |
 | `nielsen-06-info-no-visible.png` | Reconocer antes que recordar | Pantalla avanzada del flujo donde no queda visible la sucursal/ubicación elegida. |
 | `nielsen-07-pantalla-pago.png` | Flexibilidad y eficiencia de uso | Pantalla de pago. |
 | `nielsen-08-promocion-flujo.png` | Diseño estético y minimalista | Pantalla donde aparece una sugerencia/promoción durante el flujo. |

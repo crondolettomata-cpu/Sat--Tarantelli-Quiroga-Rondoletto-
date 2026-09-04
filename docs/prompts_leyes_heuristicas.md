@@ -293,6 +293,37 @@ frase estaba mal en vez de pedir que la IA adivinara.
 
 ---
 
+## Prompt 8 — Primera corrección del Tablero 2 (Nielsen)
+
+**Objetivo del prompt:** el equipo empezó a revisar el Tablero 2 (Heurísticas de Nielsen,
+hasta ese momento redactado por la IA sin contrastar con la app real) y corrigió la
+primera heurística, "Prevención de errores", con una observación de uso propia (sin
+captura esta vez, con una descripción directa de cómo funciona el flujo real).
+
+**Prompt completo (texto exacto):**
+
+> lo de prevención de errores en las heuristicas creo que esta mal, la ubicacion se puede
+> poner desde un principio y todos los pasos se van verificando
+
+**Resultado y ajustes:**
+- La hipótesis original de la IA decía que la sucursal se confirmaba recién al final del
+  recorrido, generando un riesgo de perder el pedido armado. El equipo corrigió: en la app
+  real, la sucursal se define **desde el principio**, antes de armar el pedido, y cada paso
+  siguiente se verifica contra esa selección — lo opuesto a lo que decía la tarjeta.
+- La IA cambió el veredicto de **Gravedad 2 → Gravedad 0** (la heurística se cumple, no es
+  un problema) y sacó la marca de "★ Prioritaria", ya que una heurística que se cumple no
+  compite por prioridad de arreglo. Reescribió el hallazgo y el impacto en sentido positivo
+  (arma el pedido con la certeza de poder completarlo, en vez de arriesgarse a perderlo) y
+  actualizó la descripción de la captura esperada para que muestre la selección de
+  sucursal **al inicio** del flujo, no al final.
+- Aviso pendiente para el equipo: al sacar "Prevención de errores" de las 5 heurísticas
+  priorizadas originales (Relación sistema–mundo real, Prevención de errores, Flexibilidad
+  y eficiencia, Diseño estético y minimalista, Ayuda y documentación), esa lista quedó en
+  4. Falta que el equipo decida si suma una quinta heurística priorizada o si deja la
+  lista en 4.
+
+---
+
 ## Qué generó la IA vs. qué es autoría del equipo
 
 | Contenido | Autoría |
