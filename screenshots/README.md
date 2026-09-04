@@ -39,7 +39,7 @@ Ley de Postel.
 | `nielsen-06-barra-sucursal-visible.png` | Reconocer antes que recordar | Barra inferior fija con la sucursal y el modo de entrega, visible en cualquier pantalla del recorrido. |
 | `nielsen-07-pantalla-pago.png` | Flexibilidad y eficiencia de uso | Pantalla de pago. |
 | `nielsen-08-promocion-flujo.png` | Diseño estético y minimalista | Pantalla donde aparece una sugerencia/promoción durante el flujo. |
-| `nielsen-09-pantalla-error.png` | Reconocer, diagnosticar y recuperarse de errores | Pantalla de error encontrada durante las pruebas (pago, stock, etc.). |
+| `nielsen-09-error-codigo-mibk.png` | Reconocer, diagnosticar y recuperarse de errores | Error de verificación de código en Mi BK, con la causa y el siguiente paso explicados. |
 | `nielsen-10-ayuda-mibk.png` | Ayuda y documentación | Sección de Mi BK o de ayuda. |
 
 Formato recomendado: PNG o JPG, recorte a la pantalla relevante (no hace falta full-page).

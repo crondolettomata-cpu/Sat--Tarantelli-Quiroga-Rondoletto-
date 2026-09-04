@@ -204,11 +204,11 @@ const NIELSEN = [
     n: 9,
     name: "Reconocer, diagnosticar y recuperarse de los errores",
     def: "Los mensajes de error deben expresarse en lenguaje claro (sin códigos), indicar con precisión el problema y sugerir una solución constructiva.",
-    severity: 2,
+    severity: 0,
     priority: false,
-    finding: "La aplicación ofrece mensajes frente a ciertos problemas, pero no siempre indican de forma clara qué ocurrió y cómo solucionarlo. Un mensaje de error útil no solo debe informar que algo falló, sino orientar al usuario sobre el siguiente paso a seguir.",
-    impact: "Frente a un mensaje de error poco claro, la persona usuaria puede quedarse sin saber qué hacer y abandonar el pedido en lugar de reintentarlo.",
-    shot: { file: "nielsen-09-pantalla-error.png", caption: "Pantalla de error encontrada durante las pruebas (pago, stock, etc.)." }
+    finding: "El error de verificación en Mi BK usa lenguaje claro y orienta bien: dice exactamente qué pasó (“el código que ingresaste no coincide con el código que te enviamos”) y qué hacer (“revisa tus mensajes e intenta escribirlos nuevamente”), además de ofrecer un link directo para pedir un código nuevo.",
+    impact: "La persona usuaria entiende de inmediato por qué falló y qué tiene que hacer para resolverlo, sin quedarse trabada ni tener que adivinar el problema.",
+    shot: { file: "nielsen-09-error-codigo-mibk.png", caption: "Error de verificación de código en Mi BK, con la causa y el siguiente paso explicados." }
   },
   {
     id: "n10",

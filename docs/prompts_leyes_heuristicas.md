@@ -353,6 +353,39 @@ estaba en el sitio, con Gravedad 2)
 
 ---
 
+## Prompt 10 — Corrección con evidencia real (captura de Mi BK)
+
+**Objetivo del prompt:** el equipo mandó una captura real de la pantalla de verificación
+de código de "Mi BK" (login con código enviado por correo, con un error de código
+incorrecto) para corregir la tarjeta "Reconocer, diagnosticar y recuperarse de los
+errores", que hasta ese momento decía que los mensajes de error de BK no siempre orientan
+bien.
+
+**Prompt completo (texto exacto):**
+
+> [captura de pantalla adjunta: pantalla "Verificar con código" de Mi BK, con el mensaje
+> "El código que ingresaste no coincide con el código que te enviamos. Revisa tus mensajes
+> e intenta escribirlos nuevamente.", el campo con el código incorrecto ingresado, y el
+> link "¿No recibiste un código? Enviar nuevo código"]
+> [además, captura de la tarjeta "Reconocer, diagnosticar y recuperarse de los errores"
+> tal como estaba en el sitio, con Gravedad 2]
+>
+> esto no es así, si te orienta bien
+
+**Resultado y ajustes:**
+- La captura contradice la hipótesis original: el mensaje de error sí indica con precisión
+  qué pasó (el código no coincide) y sí sugiere una acción concreta (revisar los mensajes y
+  reintentar, o pedir un código nuevo) — exactamente lo que pide la heurística.
+- La IA cambió el veredicto de **Gravedad 2 → Gravedad 0** (se cumple), reescribió el
+  hallazgo citando el mensaje real y actualizó la captura esperada a
+  `nielsen-09-error-codigo-mibk.png`.
+- Con esta van **tres heurísticas de Nielsen** corregidas de "problema" a "se cumple"
+  contra evidencia real (Prevención de errores, Reconocer antes que recordar, y esta) —
+  la hipótesis inicial de la IA sobre los mensajes de error de BK era demasiado pesimista
+  sin haber visto ninguno real.
+
+---
+
 ## Qué generó la IA vs. qué es autoría del equipo
 
 | Contenido | Autoría |
