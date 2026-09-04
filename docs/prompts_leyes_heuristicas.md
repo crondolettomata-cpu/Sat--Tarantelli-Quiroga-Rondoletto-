@@ -324,6 +324,35 @@ captura esta vez, con una descripción directa de cómo funciona el flujo real).
 
 ---
 
+## Prompt 9 — Corrección por coherencia interna (sin captura nueva)
+
+**Objetivo del prompt:** el equipo notó que la tarjeta de "Reconocer antes que recordar"
+contradecía la corrección que se acababa de hacer en "Prevención de errores" (Prompt 8):
+si la sucursal se define desde el principio y se verifica en cada paso, no puede ser cierto
+al mismo tiempo que esa información "no siempre tiene suficiente presencia" en pantalla.
+
+**Prompt completo (texto exacto):**
+
+> lo que dice esto no tiene coherencia con lo que acabamos de modicficar
+
+(mensaje acompañado de una captura de la tarjeta "Reconocer antes que recordar" tal como
+estaba en el sitio, con Gravedad 2)
+
+**Resultado y ajustes:**
+- La IA revisó las capturas ya recibidas del equipo (personalización de combo y carrito) y
+  confirmó la inconsistencia: en ambas aparece una barra fija al pie de pantalla
+  ("Retirar — BK San Fernando Autoking...") con la sucursal y el modo de entrega, visible
+  en todo momento — lo contrario de lo que decía la tarjeta.
+- Cambió el veredicto de **Gravedad 2 → Gravedad 0** (se cumple), reescribió el hallazgo
+  para describir la barra fija como el mecanismo real que resuelve la heurística, y
+  actualizó la captura esperada a `nielsen-06-barra-sucursal-visible.png`.
+- Este ajuste no vino de una captura nueva, sino de que el equipo detectó una
+  **contradicción lógica entre dos tarjetas** del propio sitio — un tipo de revisión tan
+  válido como contrastar contra una captura, y que conviene seguir haciendo a medida que
+  se corrige el resto del Tablero 2.
+
+---
+
 ## Qué generó la IA vs. qué es autoría del equipo
 
 | Contenido | Autoría |

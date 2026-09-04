@@ -171,11 +171,11 @@ const NIELSEN = [
     n: 6,
     name: "Reconocer antes que recordar",
     def: "Minimizar la carga de memoria del usuario haciendo visibles los objetos, acciones y opciones en pantalla.",
-    severity: 2,
+    severity: 0,
     priority: false,
-    finding: "Aunque las opciones principales permanecen visibles durante el pedido, cierta información seleccionada previamente (como la sucursal o el modo de entrega) no siempre tiene suficiente presencia durante todo el recorrido, obligando al usuario a recordar una decisión tomada pantallas atrás.",
-    impact: "El usuario puede terminar completando el pago sin estar seguro de en qué sucursal o modalidad quedó su pedido, generando ansiedad o pedidos mal configurados.",
-    shot: { file: "nielsen-06-info-no-visible.png", caption: "Pantalla avanzada del flujo donde no queda visible la sucursal/ubicación elegida." }
+    finding: "La sucursal y el modo de entrega quedan fijos en una barra al pie de la pantalla (“Retirar — BK San Fernando Autoking...”) durante todo el recorrido —personalización, carrito, pago—, así que el usuario no tiene que recordar una decisión tomada pantallas atrás: la tiene siempre a la vista.",
+    impact: "La persona usuaria llega al pago con la certeza de en qué sucursal y bajo qué modalidad va a retirar su pedido, sin tener que volver atrás a confirmarlo ni cargar con esa información de memoria.",
+    shot: { file: "nielsen-06-barra-sucursal-visible.png", caption: "Barra inferior fija con la sucursal y el modo de entrega, visible en cualquier pantalla del recorrido." }
   },
   {
     id: "n7",
